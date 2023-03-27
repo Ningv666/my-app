@@ -3,16 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AHelloComponent } from './a-hello/a-hello.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormTableComponent } from './form-table/form-table.component';
+import { TestPipe } from './test.pipe';
+import { TitleComponent } from './title/title.component';
+import { HomeComponent } from './home/home.component';
+import { ListService } from './service/list.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AHelloComponent,
+    FormTableComponent,
+    TestPipe,
+    TitleComponent,
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  providers: [ListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,14 @@
+<!-- 自定义表单验证 -->
+<form [formGroup]="validForm">
+    <div>账号：<input type="text" formControlName="username"></div>
+    <div>密码：<input type="text" formControlName="password"></div>
+    <div>手机号：<input type="text" formControlName="phone"></div>
+    <button (click)="onSubmit()">提交</button>
+</form>
+<!-- 管道函数 -->
+<p>{{date | date:'YY-MM-dd HH:mm:ss'}}</p>
+<p>{{name|uppercase | test}}</p>
+<p>{{name|json}}</p>
+<p>{{score | number:'1.0-0'}}</p>
+<p>{{a | percent}}</p>
+<p>{{str | slice:4}}</p>

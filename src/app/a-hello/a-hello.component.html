@@ -1,0 +1,79 @@
+<!-- 双向绑定 -->
+
+标题：<input [(ngModel)]="title">
+<div>title:{{title}}</div>
+
+<!-- 事件绑定 (事件类型)="执行函数(入参)" -->
+<br>
+<input #userName type="text" (input)="onChange($event)" />
+<button (click)="onClick(userName.value)">点我获取</button>
+
+<hr>
+<!-- 属性绑定 之 id Attribute绑定-->
+<div [id]="'box'">属性绑定之constant -id</div>
+<div [id]="box">属性绑定之variable -id</div>
+
+<!-- 属性绑定 之 class绑定-->
+<h4 [class]="box">属性绑定之constant -class</h4>
+<h4 [class]="box">属性绑定之variable -class</h4>
+
+<div [class.divDom]="true">属性绑定之单一类绑定</div>
+
+<div [class]="'div div1 div2'">属性绑定之多重类绑定</div>
+<div [class]="{ div: true, div1: false, div2: isFlag }">class对象渲染</div>
+<div [class]="['div', 'div1', 'div2']">class数组渲染</div>
+
+<div [ngClass]="{ active: true }">ngClass样式绑定</div>
+<!-- 样式绑定 -->
+<div [style.width]="'300px'" [style.color]="'red'">单一样式绑定</div>
+
+<div [style]="'width:100%;color:red'">多重样式绑定</div>
+<div [style]="{ width: '100%', color: 'yellow' }">多重样式绑定</div>
+
+<div [ngStyle]="{ color: 'blue' }">ngStyle样式绑定</div>
+
+<!-- 条件判断 控制的是元素是否被渲染 -->
+<div *ngIf="isExist">whether or not? {{ isExist }}</div>
+<div *ngIf="!isExist">whether or not? {{ isExist }}</div>
+<div *ngIf="isExist; else templateName">isExist 为true</div>
+<!-- 解析完 -->
+<!-- *ngif -->
+<ng-template *ngIf="isExist">
+    <div>isExist: {{ isExist }}</div>
+</ng-template>
+<!-- ngifelse  -->
+<ng-container *ngIf="isExist; else templateName"> isExist 为true </ng-container>
+<ng-template #templateName> isExist 为false </ng-template>
+
+<hr>
+<!-- 循环语句 -->
+<div *ngFor="let item of color let i = index let isOdd = odd">
+    isOdd: {{isOdd}}
+    index: {{i}}
+    item: {{item}}
+</div>
+<br>
+<div [ngSwitch]="type">
+    <div *ngSwitchCase="1">1 of type {{type}}</div>
+    <div *ngSwitchCase="2">1 of type {{type}}</div>
+    <div *ngSwitchDefault>nothing of type</div>
+</div>
+
+
+<!-- //模板渲染 -->
+<form [formGroup]="loginForm">
+
+    <label>
+        账号:
+        <input type="text" formControlName="userName">
+    </label>
+
+    <label>
+        密码:
+        <input type="text" formControlName="password">
+    </label>
+    <button (click)="onSubmit()">Submit</button>
+</form>
+
+
+
