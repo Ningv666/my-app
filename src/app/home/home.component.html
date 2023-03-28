@@ -4,4 +4,7 @@
 <button (click)="onClick()">change name</button>
 <br>
 <button (click)="toSon()">调用子组件方法</button>
-
+<br>
+<a [routerLink]="['/home/hello']" [queryParams]="{id:'3'}">hello</a>
+<br>
+<router-outlet></router-outlet>
