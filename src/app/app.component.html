@@ -1,12 +1,24 @@
 <!-- 插值语法 js表达式 -->
 
-<div>What is {{title}}</div>
 <!-- <app-a-hello></app-a-hello> -->
 <!-- <app-form-table></app-form-table> -->
 <!-- <app-home></app-home> -->
-<a [routerLink]="['/home/zzzzz']">Home</a>
+<app-menu>
+    <!-- <div>What is {{title}}</div>
 
-<a [routerLink]="['/hello']">Hello</a>
-<!-- 组件渲染输出 -->
-<hr>
-<router-outlet></router-outlet>
+    <a [routerLink]="['/home/zzzzz']">Home</a>
+
+    <a [routerLink]="['/hello']">Hello</a>
+    组件渲染输出
+ <hr>  -->
+
+
+
+</app-menu>
+<div>
+    <a [routerLink]="['/echarts']">Echarts </a> &nbsp;
+    <a [routerLink]="['/drag']"> Drag </a> &nbsp;
+    <a [routerLink]="['/spotEcharts']"> spot Echarts </a>
+    <hr>
+    <router-outlet></router-outlet>
+</div>

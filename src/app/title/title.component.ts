@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import { of, map } from 'rxjs';
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
@@ -13,7 +13,10 @@ export class TitleComponent {
     this.add.emit('666');
   }
   ngOnInit() {
-    console.log('this is ngOnInit');
+    console.log('this is ngOnInit'); // etc
+    of(1, 2, 3)
+      .pipe(map((x) => x + '!!!'))
+      .subscribe((e) => console.log(e));
   }
   ngOnChanges() {
     console.log(this.title, 'this is ngOnChanges');
