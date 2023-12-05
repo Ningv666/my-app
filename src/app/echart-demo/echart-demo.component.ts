@@ -56,6 +56,16 @@ export class EchartDemoComponent implements OnInit, OnDestroy {
 
   render() {
     this.option = {
+      // 控制显示top series中的name
+      legend: {
+        data: ['人数1', '人数2']
+      },
+      // 下载该exharts的逻辑写这 
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
       // 全局调色盘
       color: [
         '#37A2DA',
@@ -118,12 +128,14 @@ export class EchartDemoComponent implements OnInit, OnDestroy {
       },
       xAxis: {
         type: 'time',
+        name:"时间",
         splitLine: {
           show: false,
         },
       },
       yAxis: {
         type: 'value',
+        name: '人数',
         boundaryGap: [0, '100%'],
         splitLine: {
           show: false,
@@ -131,13 +143,13 @@ export class EchartDemoComponent implements OnInit, OnDestroy {
       },
       series: [
         {
-          name: 'Fake Data',
+          name: '人数1',
           type: 'line',
           showSymbol: false,
           data: this.data,
         },
         {
-          name: 'Fake Data1',
+          name: '人数2',
           type: 'line',
           showSymbol: false,
           data: this.data1,
